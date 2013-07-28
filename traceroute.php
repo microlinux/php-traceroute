@@ -122,7 +122,7 @@ class TracerouteResult implements ArrayAccess
                              $output, $retval);
 
       if ($retval > 0):
-        throw new Exception('loadASNInfo: '.implode("\n", $output));
+        throw new Exception('loadASN(): '.implode("\n", $output));
       endif;
 
       for ($i = 0; $i < $this->_num_hops; $i++):
@@ -151,7 +151,7 @@ class TracerouteResult implements ArrayAccess
   public function loadGeo()
   {
     if (!is_callable('geoip_record_by_name')):
-      throw new Exception('loadGeoInfo: geoip extension not loaded');
+      throw new Exception('loadGeo(): geoip extension not loaded');
     endif;
 
     if (!$this->_geo):
@@ -213,7 +213,7 @@ class Traceroute
   public function __construct($timeout = 2)
   {
     if (!is_callable('exec')):
-      throw new Exception('__construct: function exec() not available');
+      throw new Exception('__construct(): exec() not available');
     endif;
 
     $this->_timeout = escapeshellarg($timeout);
@@ -225,7 +225,7 @@ class Traceroute
          escapeshellarg($target).' 2>&1', $output, $retval);
 
     if ($retval > 0):
-      throw new Exception('trace: '.implode("\n", $output));
+      throw new Exception('trace(): '.implode("\n", $output));
     endif;
 
     $num_lines = count($output);
