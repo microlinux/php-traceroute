@@ -12,7 +12,8 @@
  * $hops = $tracer->trace('sourceforge.net');
  *
  * Calls to trace() return a TracerouteResult object. By default, they
- * contain the target, the IP it resolved to and the hop IPs and latencies.
+ * contain the target, the IP it resolved to, hop IPs and latencies as well
+ * as hop count.
  *
  * TracerouteResult objects are accessed like arrays to retrieve hop
  * information. Hops are represented by associative arrays; use the actual
