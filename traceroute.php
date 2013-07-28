@@ -16,7 +16,8 @@
  *
  * TracerouteResult objects are accessed like arrays to retrieve hop
  * information. Hops are represented by associative arrays; use the actual
- * hop numbers as indexes.
+ * hop numbers as indexes. If there is more than one tailing timeout, they 
+ * are truncated to one.
  *
  * print_r($hops[1]);
  * print_r($hops[2]);
@@ -29,7 +30,7 @@
  * loadGeo()  adds 'city', 'region', 'country', 'lat', 'long' to hops
  *
  * To retrieve the target and target IP, use the target() and targetIP()
- * methods.
+ * methods. Number of hops can be retrieved with numHops().
  *
  * The PECL geoip extension and Maxmind city and country databases are
  * required to retrieve geolocation info:
@@ -249,7 +250,7 @@ class Traceroute
       endif;
     endfor;
 
-    # trunacte to 1 tail timeout if more than 1
+    # trunacte to one tail timeout if more than one
     if ($tail_timeouts > 1):
       $output = array_slice($output, 0, 30 - ($tail_timeouts - 1));
     endif;
