@@ -37,7 +37,7 @@
  * http://pecl.php.net/package/geoip
  * http://dev.maxmind.com/geoip
  *
- * Access to exec(), the whois command and outbound TCP port 43 are required to
+ * Access to exec(), whois, netcat and outbound TCP port 43 are required to
  * retrieve ASN info:
  *
  * http://www.team-cymru.org/Services/ip-to-asn.html#whois
