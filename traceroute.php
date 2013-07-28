@@ -9,13 +9,13 @@
  * Traceroute objects have one public method, trace(). Calls to trace() require
  * one parameter, the target.
  *
- * $hops = $tracer->trace('sourceforge.net')
+ * $hops = $tracer->trace('sourceforge.net');
  *
- * Calls to trace() return a TraceRouteResult object. By default, they
+ * Calls to trace() return a TracerouteResult object. By default, they
  * contain the target, the IP it resolved to and the hop IPs and latencies.
  *
- * TraceRouteResult objects are accessed like arrays to retrieve hop
- * information. Hops are represented by associative arrays an use the actual
+ * TracerouteResult objects are accessed like arrays to retrieve hop
+ * information. Hops are represented by associative arrays; use the actual
  * hop numbers as indexes.
  *
  * print_r($hops[1]);
@@ -37,7 +37,7 @@
  * http://pecl.php.net/package/geoip
  * http://dev.maxmind.com/geoip
  *
- * Access to exec(), the whois command and outbound TCP port 43 are required to 
+ * Access to exec(), the whois command and outbound TCP port 43 are required to
  * retrieve ASN info:
  *
  * http://www.team-cymru.org/Services/ip-to-asn.html#whois
