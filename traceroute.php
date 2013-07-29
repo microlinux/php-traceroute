@@ -50,11 +50,11 @@
 
 class TracerouteResult implements ArrayAccess
 {
-  protected $_asn_loaded;
-  protected $_geo_loaded;
+  protected $_asn;
+  protected $_geo;
   protected $_hops;
   protected $_num_hops;
-  protected $_rdns_loaded;
+  protected $_rdns;
   protected $_target;
   protected $_target_ip;
 
