@@ -1,6 +1,8 @@
 <?php
 
 /**
+ * This program is placed into the public domain.
+ * 
  * New Traceroute objects have one optional parameter, hop query timeout, in
  * seconds. Default is 2.
  *
@@ -251,7 +253,7 @@ class Traceroute
       endif;
     endfor;
 
-    # trunacte to one tail timeout if more than one
+    # truncate to one tail timeout if more than one
     if ($tail_timeouts > 1):
       $output = array_slice($output, 0, 30 - ($tail_timeouts - 1));
     endif;
