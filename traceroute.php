@@ -119,7 +119,7 @@ class TracerouteResult implements ArrayAccess
         $ip_list .= '-f '.$this->_hops[$i]['ip']."\n";
       endfor;
 
-      # http://http://www.team-cymru.org/Services/ip-to-asn.html#whois
+      # http://www.team-cymru.org/Services/ip-to-asn.html#whois
       exec('echo -e "'.rtrim($ip_list, "\n").'" | nc whois.cymru.com 43',
                              $output, $retval);
 
